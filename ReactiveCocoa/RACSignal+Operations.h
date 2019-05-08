@@ -192,7 +192,10 @@ extern const NSInteger RACSignalErrorNoMatchingCase;
 ///
 /// Returns a signal which sends the results from each invocation of
 /// `reduceBlock`.
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"") \
 + (RACSignal *)combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)())reduceBlock;
+_Pragma("clang diagnostic pop")
 
 /// Merges the receiver and the given signal with `+merge:` and returns the
 /// resulting signal.
